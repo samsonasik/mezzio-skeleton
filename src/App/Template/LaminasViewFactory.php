@@ -3,11 +3,11 @@
 namespace App\Template;
 
 use Interop\Container\ContainerInterface;
-use Zend\Expressive\Template\ZendView;
-use Zend\View\Renderer\PhpRenderer;
-use Zend\View\Resolver;
+use Laminas\View\Renderer\PhpRenderer;
+use Laminas\View\Resolver;
+use Mezzio\Template\LaminasView;
 
-class ZendViewFactory
+class LaminasViewFactory
 {
     public function __invoke(ContainerInterface $container)
     {
@@ -31,7 +31,7 @@ class ZendViewFactory
         $renderer->setResolver($resolver);
 
         // Inject renderer
-        $view = new ZendView($renderer, 'layout/default');
+        $view = new LaminasView($renderer, 'layout/default');
 
         // Add template paths
         foreach ($config['templates']['paths'] as $path => $namespace) {

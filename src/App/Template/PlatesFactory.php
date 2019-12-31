@@ -4,7 +4,7 @@ namespace App\Template;
 
 use Interop\Container\ContainerInterface;
 use League\Plates\Engine as PlatesEngine;
-use Zend\Expressive\Template\Plates;
+use Mezzio\Template\Plates;
 
 class PlatesFactory
 {

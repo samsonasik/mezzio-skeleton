@@ -1,7 +1,7 @@
 <?php
 
 use App\Container\PimpleContainer as Container;
-use Zend\Config\Config;
+use Laminas\Config\Config;
 
 // Load configuration
 $config = [];

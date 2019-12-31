@@ -3,13 +3,13 @@
 return [
     'dependencies' => [
         'factories' => [
-            'Zend\Expressive\FinalHandler' => Zend\Expressive\Container\TemplatedErrorHandlerFactory::class,
-            Zend\Expressive\Template\TemplateInterface::class => App\Template\ZendViewFactory::class,
+            'Mezzio\FinalHandler' => Mezzio\Container\TemplatedErrorHandlerFactory::class,
+            Mezzio\Template\TemplateInterface::class => App\Template\LaminasViewFactory::class,
         ],
     ],
 
     'templates' => [
-        'cache_dir'       => 'data/cache/zend-view',
+        'cache_dir'       => 'data/cache/laminas-view',
         'extension'       => 'php',
         'map' => [
             'layout/default' => 'templates/layout/default.phtml',

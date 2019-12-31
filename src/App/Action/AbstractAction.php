@@ -3,10 +3,10 @@
 namespace App\Action;
 
 use Interop\Container\ContainerInterface;
+use Laminas\Stratigility\MiddlewareInterface;
+use Mezzio\Template\TemplateInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Expressive\Template\TemplateInterface;
-use Zend\Stratigility\MiddlewareInterface;
 
 /**
  * Action abstract class
@@ -59,6 +59,6 @@ abstract class AbstractAction implements MiddlewareInterface
      */
     public function getRenderer()
     {
-        return $this->getContainer()->get('Zend\Expressive\Template\TemplateInterface');
+        return $this->getContainer()->get('Mezzio\Template\TemplateInterface');
     }
 }

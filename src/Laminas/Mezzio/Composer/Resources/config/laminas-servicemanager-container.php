@@ -1,7 +1,7 @@
 <?php
 
-use Zend\ServiceManager\ServiceManager;
-use Zend\ServiceManager\Config;
+use Laminas\ServiceManager\Config;
+use Laminas\ServiceManager\ServiceManager;
 
 $config = [];
 foreach (glob('config/autoload/{{,*.}global,{,*.}local}.php', GLOB_BRACE) as $file) {
