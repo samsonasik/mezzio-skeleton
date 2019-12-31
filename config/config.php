@@ -1,8 +1,8 @@
 <?php
 
-use Zend\Config\Config;
-use Zend\Config\Factory;
-use Zend\Config\Writer\PhpArray;
+use Laminas\Config\Config;
+use Laminas\Config\Factory;
+use Laminas\Config\Writer\PhpArray;
 
 $env = getenv('APP_ENV') ?: 'development';
 $cachedConfigFile = 'data/cache/app_config.php';

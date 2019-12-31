@@ -3,8 +3,8 @@
 namespace App\Action;
 
 use Interop\Container\ContainerInterface;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\TemplateInterface;
+use Mezzio\Router\RouterInterface;
+use Mezzio\Template\TemplateInterface;
 
 class HomePageFactory
 {

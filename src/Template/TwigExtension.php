@@ -2,12 +2,12 @@
 
 namespace App\Template;
 
-use Zend\Expressive\Router\RouterInterface;
+use Mezzio\Router\RouterInterface;
 
 class TwigExtension extends \Twig_Extension
 {
     /**
-     * @var \Zend\Expressive\Router\RouterInterface
+     * @var \Mezzio\Router\RouterInterface
      */
     private $router;
 
@@ -38,7 +38,7 @@ class TwigExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'zend-expressive';
+        return 'mezzio';
     }
 
     public function getFunctions()

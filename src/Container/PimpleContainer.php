@@ -2,8 +2,8 @@
 
 namespace App\Container;
 
-use Pimple\Container as Pimple;
 use Interop\Container\ContainerInterface;
+use Pimple\Container as Pimple;
 
 /**
  * ContainerInterface wrapper for Pimple 3.0
