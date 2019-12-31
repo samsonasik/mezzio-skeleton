@@ -7,10 +7,10 @@ use Composer\Factory;
 use Composer\IO\IOInterface;
 use Composer\Json\JsonFile;
 use Composer\Package\AliasPackage;
+use Composer\Package\BasePackage;
 use Composer\Package\Link;
 use Composer\Package\Version\VersionParser;
 use Composer\Script\Event;
-use Composer\Package\BasePackage;
 
 /**
  * Composer installer script
@@ -18,11 +18,11 @@ use Composer\Package\BasePackage;
  * Add this script to composer.json:
  *
  *  "scripts": {
- *      "pre-update-cmd": "Zend\\Expressive\\Composer\\OptionalPackages::install",
- *      "pre-install-cmd": "Zend\\Expressive\\Composer\\OptionalPackages::install"
+ *      "pre-update-cmd": "Mezzio\\Composer\\OptionalPackages::install",
+ *      "pre-install-cmd": "Mezzio\\Composer\\OptionalPackages::install"
  *  },
  *
- * @package Zend\Expressive\Composer
+ * @package Mezzio\Composer
  *
  * @author Geert Eltink <https://xtreamwayz.github.io/>
  */
@@ -138,8 +138,8 @@ class OptionalPackages
         // Update composer definition
         $json->write(self::$composerDefinition);
 
-        // @TODO: Remove installer - Not working, getting unlink(D:\projects\test/src/Zend): Permission denied
-        //array_map('unlink', glob($projectRoot . '/src/Zend'));
+        // @TODO: Remove installer - Not working, getting unlink(D:\projects\test/src/Laminas): Permission denied
+        //array_map('unlink', glob($projectRoot . '/src/Laminas'));
     }
 
     /**

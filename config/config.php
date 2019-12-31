@@ -7,7 +7,7 @@
  * The configuration can be cached. This can be done by setting ``config_cache_enabled`` to ``true``.
  *
  * The configuration is stored in json so it is not depended on 3rd party libraries. Feel free to use something else
- * like Zend\Config\Writer to write PHP arrays.
+ * like Laminas\Config\Writer to write PHP arrays.
  *
  * Obviously, if you use closures in your config you can't cache it.
  */
