@@ -1,7 +1,7 @@
 <?php
 
-use Aura\Di\ContainerBuilder;
-use Zend\Config\Config;
+use Interop\Container\Pimple\PimpleInterop as Container;
+use Laminas\Config\Config;
 
 // Load configuration
 $config = [];
@@ -10,21 +10,24 @@ foreach (glob('config/autoload/{{,*.}global,{,*.}local}.php', GLOB_BRACE) as $fi
 }
 
 // Build container
-$builder = new ContainerBuilder();
-$container = $builder->newInstance();
+$container = new Container();
 
 // Inject config as a service
-$container->set('config', new Config($config));
+$container['config'] = $config;
 
 // Inject factories
 foreach ($config['dependencies']['factories'] as $name => $object) {
-    $container->set($object, $container->lazyNew($object));
-    $container->set($name, $container->lazyGetCall($object, '__invoke', $container));
+    $container[$name] = $container->share(function ($c) use ($object) {
+        $factory = new $object();
+        return $factory($c);
+    });
 }
 
 // Inject invokables
 foreach ($config['dependencies']['invokables'] as $name => $object) {
-    $container->set($name, $container->lazyNew($object));
+    $container[$name] = $container->share(function ($c) use ($object) {
+        return new $object();
+    });
 }
 
 return $container;

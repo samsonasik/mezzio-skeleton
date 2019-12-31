@@ -9,12 +9,12 @@ return [
         'nikic/fast-route'                  => '^0.6.0',
         'ocramius/proxy-manager'            => '^1.0',
         'twig/twig'                         => '^1.21',
-        'zendframework/zend-filter'         => '^2.5',
-        'zendframework/zend-i18n'           => '^2.5',
-        'zendframework/zend-mvc'            => '^2.5',
-        'zendframework/zend-psr7bridge'     => '^0.1.0',
-        'zendframework/zend-servicemanager' => '^2.5',
-        'zendframework/zend-view'           => '^2.5',
+        'laminas/laminas-filter'         => '^2.5',
+        'laminas/laminas-i18n'           => '^2.5',
+        'laminas/laminas-mvc'            => '^2.5',
+        'laminas/laminas-psr7bridge'     => '^0.1.0',
+        'laminas/laminas-servicemanager' => '^2.5',
+        'laminas/laminas-view'           => '^2.5',
     ],
 
     'questions' => [
@@ -48,13 +48,13 @@ return [
                     ],
                 ],
                 3 => [
-                    'name'     => 'zend-mvc TreeRouteStack',
+                    'name'     => 'laminas-mvc TreeRouteStack',
                     'packages' => [
-                        'zendframework/zend-mvc',
-                        'zendframework/zend-psr7bridge',
+                        'laminas/laminas-mvc',
+                        'laminas/laminas-psr7bridge',
                     ],
                     'copy-files' => [
-                        '/Resources/config/zf2-router-routes.php' => '/config/autoload/router.global.php',
+                        '/Resources/config/laminas-router-routes.php' => '/config/autoload/router.global.php',
                     ],
                 ],
             ],
@@ -68,13 +68,13 @@ return [
             'custom-package-warning' => 'You need to edit public/index.php to start the custom container.',
             'options'                => [
                 1 => [
-                    'name'     => 'zendframework/zend-servicemanager',
+                    'name'     => 'laminas/laminas-servicemanager',
                     'packages' => [
-                        'zendframework/zend-servicemanager',
+                        'laminas/laminas-servicemanager',
                         'ocramius/proxy-manager',
                     ],
                     'copy-files' => [
-                        '/Resources/config/zend-servicemanager-container.php' => '/config/container.php',
+                        '/Resources/config/laminas-servicemanager-container.php' => '/config/container.php',
                         '/Resources/config/container-dependencies.php' => '/config/autoload/dependencies.global.php',
                     ],
                 ],
@@ -108,20 +108,20 @@ return [
             'custom-package' => true,
             'options'        => [
                 1 => [
-                    'name'     => 'zendframework/zend-view',
+                    'name'     => 'laminas/laminas-view',
                     'packages' => [
-                        'zendframework/zend-view',
-                        'zendframework/zend-filter',
-                        'zendframework/zend-i18n',
-                        'zendframework/zend-servicemanager'
+                        'laminas/laminas-view',
+                        'laminas/laminas-filter',
+                        'laminas/laminas-i18n',
+                        'laminas/laminas-servicemanager'
                     ],
                     'copy-files' => [
-                        '/Resources/config/zend-view-templates.php' => '/config/autoload/templates.global.php',
-                        '/Resources/templates/zend-view-404.phtml' => '/templates/error/404.phtml',
-                        '/Resources/templates/zend-view-500.phtml' => '/templates/error/500.phtml',
-                        '/Resources/templates/zend-view-error.phtml' => '/templates/error/error.phtml',
-                        '/Resources/templates/zend-view-layout.phtml' => '/templates/layout/default.phtml',
-                        '/Resources/templates/zend-view-home-page.phtml' => '/templates/app/home-page.phtml',
+                        '/Resources/config/laminas-view-templates.php' => '/config/autoload/templates.global.php',
+                        '/Resources/templates/laminas-view-404.phtml' => '/templates/error/404.phtml',
+                        '/Resources/templates/laminas-view-500.phtml' => '/templates/error/500.phtml',
+                        '/Resources/templates/laminas-view-error.phtml' => '/templates/error/error.phtml',
+                        '/Resources/templates/laminas-view-layout.phtml' => '/templates/layout/default.phtml',
+                        '/Resources/templates/laminas-view-home-page.phtml' => '/templates/app/home-page.phtml',
                     ],
                 ],
                 2 => [

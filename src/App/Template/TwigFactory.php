@@ -3,11 +3,11 @@
 namespace App\Template;
 
 use Interop\Container\ContainerInterface;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\Twig;
-use Twig_Loader_Filesystem as TwigLoader;
+use Mezzio\Router\RouterInterface;
+use Mezzio\Template\Twig;
 use Twig_Environment as TwigEnvironment;
 use Twig_Extension_Debug as TwigExtensionDebug;
+use Twig_Loader_Filesystem as TwigLoader;
 
 class TwigFactory
 {

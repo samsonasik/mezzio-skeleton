@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Expressive\Composer;
+namespace Mezzio\Composer;
 
 use Composer\Composer;
 use Composer\Factory;
@@ -16,11 +16,11 @@ use Composer\Script\Event;
  * Add this script to composer.json:
  *
  *  "scripts": {
- *      "pre-update-cmd": "Zend\\Expressive\\Composer\\OptionalPackages::install",
- *      "pre-install-cmd": "Zend\\Expressive\\Composer\\OptionalPackages::install"
+ *      "pre-update-cmd": "Mezzio\\Composer\\OptionalPackages::install",
+ *      "pre-install-cmd": "Mezzio\\Composer\\OptionalPackages::install"
  *  },
  *
- * @package Zend\Expressive\Composer
+ * @package Mezzio\Composer
  *
  * @author Geert Eltink <https://xtreamwayz.github.io/>
  */
@@ -116,8 +116,8 @@ class OptionalPackages
         // Update composer definition
         $json->write(self::$composerDefinition);
 
-        // @TODO: Remove installer - Not working, getting unlink(D:\projects\test/src/Zend): Permission denied
-        //array_map('unlink', glob($projectRoot . '/src/Zend'));
+        // @TODO: Remove installer - Not working, getting unlink(D:\projects\test/src/Laminas): Permission denied
+        //array_map('unlink', glob($projectRoot . '/src/Laminas'));
     }
 
     /**
